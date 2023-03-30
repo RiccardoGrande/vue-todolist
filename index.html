@@ -19,8 +19,8 @@
         <main>
 
             <div class="add_texts">
-                <input type="text" v-model.trim="newText" @keyup.enter="addText()" placeholder="type a text name">
-                <button @click="addText()">Add</button>
+                <input type="text" v-model.trim="newText" @keyup.enter="addTexts()" placeholder="type a text name">
+                <button @click="addTexts()">Add</button>
 
                 <div class="alert" role="alert" v-if="error">
                     <strong>{{error}}</strong>
@@ -31,17 +31,30 @@
                 <h2>todo</h2>
 
                 <ul v-if="texts.length > 0">
-                    <li v-for="text in texts">
+                    <li v-for="message in texts">
 
-                        {{text}}
+                        {{message.text}}
 
                     </li>
                 </ul>
 
                 
-            
             </div>
 
+            
+            <div class="completed" v-if="completed.length > 0">
+
+                <h2>Completed tasks</h2>
+
+                <ul>
+                    <li v-for="task in completed">
+
+                        {{message.text}}
+
+                    </li>
+                </ul>
+
+            </div>
             
             
             

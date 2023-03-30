@@ -7,7 +7,7 @@ createApp({
 
     data(){
         return{
-            
+            newText:'',
             error: null,
             texts:[
                 {
@@ -40,19 +40,30 @@ createApp({
 
             console.log('add the current text to the list');
 
+            console.log(this.newText);
+            console.log(this.newText.length);
 
-            
-            if (done === true) {
-                    
-                    this.text =
+            if (this.newText.length > 5) {
+
+                this.texts.unshift(this.newText)
+                this.newText= ''
+                this.error = null
 
             } else{
 
-                this.error = 'Sorry, the item is not done'
+                this.error = 'Sorry, task is not done'
             }
+            
+        },
+        completeTask(i){
+
+            this.completeTask.push(this.texts[i])
+            this.texts.splice(i, 1)
+
+        }
 
             
         }
        
     }
-}).mount('#app')
+).mount('#app')
