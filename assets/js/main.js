@@ -7,12 +7,12 @@ createApp({
 
     data(){
         return{
-            newText: '',
+            
             error: null,
             texts:[
                 {
                     text:'learn HTML',
-                    done: done
+                    done: true
                 },
                 {
                     text:'learn CSS',
@@ -20,7 +20,7 @@ createApp({
                 },
                 {
                     text:'learn JS',
-                    done: done
+                    done: true
                 },
                 {
                     text:'learn PHP',
@@ -40,33 +40,19 @@ createApp({
 
             console.log('add the current text to the list');
 
-            console.log(this.newText);
-            console.log(this.nexText.length);
 
-            if (this.nexText.length > 5) {
-
-                this.text.unshift(this.nexText)
-                this.nexText= ''
-                this.error = null
-
-                if (condition) {
+            
+            if (done === true) {
                     
-                } else {
-                    
-                }
+                    this.text =
 
             } else{
 
                 this.error = 'Sorry, the item is not done'
             }
+
             
-        },
-        completeTask(i){
-
-            this.completeTask.push(this.tasks[i])
-            this.tasks.splice(i, 1)
-
         }
-
+       
     }
 }).mount('#app')
