@@ -9,6 +9,58 @@
 </head>
 <body>
 
+    <div id="app">
+
+        <header>
+
+            <h1>ToDo List</h1>
+
+        </header>
+        <main>
+
+            <div class="add_texts">
+                <input type="text" v-model.trim="newText" @keyup.enter="addText()" placeholder="type a text name">
+                <button @click="addText()">Add</button>
+
+                <div class="alert" role="alert" v-if="error">
+                    <strong>{{error}}</strong>
+                </div>
+            </div>
+            <div class="texts" >
+
+                <h2>todo</h2>
+
+                <ul v-if="texts.length > 0">
+                    <li v-for="text in texts">
+
+                        {{text}}
+
+                    </li>
+                </ul>
+
+                <p v-else>nothing to do</p>
+            
+            </div>
+
+            <div class="completed" v-if="completed.length > 0">
+
+                <h2>Completed tasks</h2>
+
+                <ul>
+                    <li v-for="task in completed">
+
+                        {{task}}
+
+                    </li>
+                </ul>
+
+            </div>
+            
+            
+        </main>
+        <footer></footer>
+
+    </div>
     
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
