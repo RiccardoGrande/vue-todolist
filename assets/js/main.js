@@ -25,8 +25,7 @@ createApp({
                 {
                     text:'learn PHP',
                     done: false
-                },
-                
+                },                
              
             ],
 
@@ -45,7 +44,12 @@ createApp({
 
             if (this.newText.length > 5) {
 
-                this.texts.unshift(this.newText)
+                const newMessage = {
+                    text:this.newText,
+                    done: false
+                };
+
+                this.texts.unshift(newMessage)
                 this.newText= ''
                 this.error = null
 
