@@ -35,7 +35,11 @@
 
                         {{message.text}}
 
+                        <button @click="deleteTexts()">&#10060;</button>
+
                     </li>
+
+                    
                 </ul>
 
                 
@@ -49,7 +53,9 @@
                 <ul>
                     <li v-for="message in completed">
 
-                        {{message}}
+                        {{message.newMessage}}
+
+                        <button @click="deleteTexts()">&#10060;</button>
 
                     </li>
                 </ul>

@@ -7,6 +7,7 @@ createApp({
 
     data(){
         return{
+            delete:'',
             newText:'',
             error: null,
             texts:[
@@ -64,7 +65,13 @@ createApp({
             this.completeTask.push(this.texts[i])
             this.texts.splice(i, 1)
 
+        },
+        deleteTexts(){
+
+            this.texts.splice('', 1)
+
         }
+
 
             
         }
